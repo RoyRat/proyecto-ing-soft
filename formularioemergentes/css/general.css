@@ -1,0 +1,200 @@
+.highlight {  background: yellow;}
+
+.ui-tabs-nav li {position: relative;}
+
+.ui-tabs-selected a span {padding-right: 10px;}
+
+.ui-tabs-close {display: none;position: absolute;top: 3px;right: 0px;z-index: 800;width: 16px;height: 14px;font-size: 10px; font-style: normal;cursor: pointer;}
+
+.ui-tabs-selected .ui-tabs-close {display: block;}
+
+.ui-layout-west .ui-jqgrid tr.jqgrow td { border-bottom: 0px none;}
+
+.ui-datepicker {z-index:1200;}
+
+body { font-size: 67%; background-color: #F6F6F6; }
+
+
+
+input.text { margin-bottom:12px; width:95%; padding: .4em; }
+
+fieldset { padding:0; border:0; margin-top:25px; }
+
+h1 { font-size: 1.2em; margin: .6em 0; }
+
+.ui-dialog .ui-state-error { padding: .3em; }
+
+.ui-dialog-princial{width: auto !important;
+	float: left;
+}
+
+
+
+.validateTips { border: 1px solid transparent; padding: 0.3em; }
+
+.ui-state-default{ color: #0078ae; }
+
+.dialogo_principal{ display: none;}
+
+.toolbar_azul {padding: 10px 4px;}
+
+table.formDialog{
+	color:#006600;
+	margin: 10px 5px;
+}
+
+table.formDialog label{
+	color: #666;
+	font-weight: bold;
+	
+}
+
+button#co_grabar_boton{
+	margin: 10px 3px 5px 3px;
+	font-size: 1.3em;
+	font-weight: bold;
+}
+
+table.formDialog{
+	margin-left:2%; 
+	margin-right:2%;
+	
+}
+
+
+
+table.formDialog tr *{
+	padding: 3px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+table.formDialog tr td{
+	font-size: 1.2em !important;
+	font-weight: bold;
+}
+
+table.formDialog tr td input{
+	font-size:12px !important;
+}
+
+
+table.formDialog caption{
+	font-size: 1.2em !important;
+}
+
+span.ui-extra-validation{
+	margin: 1px !important;
+}
+span.small{
+	font-size:0.8em;
+}
+	
+table.formDialog tr td.field{
+	font-size: 12px !important;
+	font-weight: bold !important;
+}
+
+.ui-icon-extra{
+	margin-left: 5px;
+}
+
+#contenido_general{
+	margin-top: 2px;
+	margin-left: 100px;
+}
+
+.jqueryslidemenu{
+font: bold 12px Verdana;
+
+width: 993px;
+}
+
+.jqueryslidemenu ul{
+margin: 0;
+padding: 0;
+list-style-type: none;
+}
+
+/*Top level list items*/
+.jqueryslidemenu ul li{
+position: relative;
+display: inline;
+float: left;
+}
+
+/*Top level menu link items style*/
+.jqueryslidemenu ul li a{
+display: block;
+color: white;
+padding: 4px 6px;
+font-size:1.3em;
+text-decoration: none;
+}
+
+* html .jqueryslidemenu ul li a{ /*IE6 hack to get sub menu links to behave correctly*/
+display: inline-block;
+}
+
+.jqueryslidemenu ul li a:link, .jqueryslidemenu ul li a:visited{
+color: white;
+}
+
+.jqueryslidemenu ul li a:hover{
+background: #fff;
+border-radius: 20px; 
+-moz-border-radius: 20px; 
+-webkit-border-radius: 20px; 
+border: 1px solid #eeeeee;
+color: #000;
+}
+	
+/*1st sub level menu*/
+.jqueryslidemenu ul li ul{
+position: absolute;
+left: 0;
+display: block;
+visibility: hidden;
+}
+
+/*Sub level menu list items (undo style from Top level List Items)*/
+.jqueryslidemenu ul li ul li{
+display: list-item;
+float: none;
+}
+
+/*All subsequent sub menu levels vertical offset after 1st level sub menu */
+.jqueryslidemenu ul li ul li ul{
+top: 0;
+}
+
+/* Sub level menu links style */
+.jqueryslidemenu ul li ul li a{
+font: normal 13px Verdana;
+width: 160px; /*width of sub menus*/
+padding: 5px;
+margin: 0;
+border-top-width: 0;
+border-bottom: 1px solid gray;
+}
+
+.jqueryslidemenuz ul li ul li a:hover{ /*sub menus hover style*/
+background: #eff9ff;
+color: black;
+}
+
+.extraID .ui-dialog-titlebar {
+	padding: 0 !important;
+	margin: 0 !important;
+	height: 25px;
+}
+.class1 {background-color: #e1f7ca;}
+.class2 {background-color: #cae1f7;}
+.class3 {background-color: #f7cae1;}
+
+.dirty-cell{
+font-weight: bold!important;
+background: #8ebc00 !important;
+}
+
+select,textarea{font-size:0.9em !important;}
