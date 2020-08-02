@@ -25,10 +25,8 @@ class Hoja extends CI_Controller{
                      
 	//funcion para dar los valores a la cabecera tanto en nuevo, como al momento de editar
 	function datos($sol,$accion){
+        // Christian Carrera actualizacion de obtencion de datos del formulario web
         if ($accion=='n') {
-			//caso para nuevos registros
-			
-            
 			$datos['combo_documento']=$this->cmb_documento(null,"  class='custom-select' id='FORM_TIPODOCUMENTO'");
 			
 			$datos['combo_paisnacionalidad']= $this->mvarios->cmb_paisnacionalidad(null," class='custom-select' id='LOC_PAISNAC'");
@@ -44,11 +42,38 @@ class Hoja extends CI_Controller{
 			$datos['combo_ciudadsufragio']=$this->mvarios->cmb_ciudadsufragio(null,null,"  class='custom-select' id='LOC_CIUDADSUFRAG'");
 			$datos['combo_sectorsufragio']=$this->mvarios->cmb_sectorsufragio(null,null,"  class='custom-select' id='LOC_SECTORSUFRAG'");
 			
+			$datos['combo_genero']=$this->cmb_genero(null,"class='custom-select' id='FORM_GENERO'");
+            $datos['combo_civil']=$this->cmb_civil(null,"  class='custom-select' id='FORM_ESTADO_CIVIL'");
+            $datos['combo_tipoSangre']=$this->cmb_tipoSangre(null," class='custom-select' id='FORM_TIPO_SANGRE'");
+            $datos['combo_etnia']=$this->cmb_etnia(null," class='custom-select' id='FORM_ETNIA'");
+			$datos['combo_pueblos']=$this->cmb_pueblos(null,"class='custom-select' id='FORM_PUEBLOS'");			
+			$datos['combo_formacion']=$this->cmb_formacion(null,"class='custom-select' id='FORM_NIVEL_FORMACION'");
+			$datos['combo_idioma']=$this->cmb_idioma(null,"  class='custom-select' id='FORM_INGLES'");		
+			$datos['combo_internet']=$this->cmb_internet(null,"class='custom-select' id='FORM_POSEE_INTERNET'");
+			
 			$datos['combo_relacioncontacto']=$this->cmb_relacioncontacto(null,"  class='custom-select' id='FORM_RELACION_CONTACTO'");
 			
             $datos['combo_cargodiscapacidad']=$this->cmb_cargodiscapacidad(null,"  class='custom-select' id='FORM_CARGO_DISCAPACITADO'");
             $datos['combo_discapacidad']=$this->cmb_discapacidad(null,"  class='custom-select' id='FORM_POSEE_DISCAPACIDAD'");
-      } else {
+            $datos['combo_tipoDiscapacidad']=$this->cmb_tipoDiscapacidad(null,"  class='custom-select' id='FORM_TIPO_DISCAP'");
+			$datos['combo_enfermedad']=$this->cmb_enfermedad(null," class='custom-select' id='FORM_POSEE_ENFERMEDAD'");
+            $datos['combo_alergia']=$this->cmb_alergia(null,"  class='custom-select' id='FORM_POSEE_ALERGIA'");
+            $datos['combo_medicacion']=$this->cmb_medicacion(null,"  class='custom-select' id='FORM_POSEE_MEDICACION'");            
+            $datos['combo_cercamsp']=$this->cmb_cercamsp(null,"class='custom-select' id='FORM_CERCA_MSP'");
+			
+			$datos['combo_bono']=$this->cmb_bono(null,"  class='custom-select' id='FORM_RECIBE_BONO'");
+            $datos['combo_trabajo']=$this->cmb_trabajo(null,"  class='custom-select' id='FORM_LABORA'");            
+            $datos['combo_usoIngresos']=$this->cmb_usoIngresos(null,"class='custom-select' id='FORM_USA_INGRESOS'");            
+            $datos['combo_vivienda']=$this->cmb_vivienda(null,"class='custom-select' id='FORM_VIVIENDA'");
+            
+			$datos['combo_cercareten']=$this->cmb_cercareten(null,"class='custom-select' id='FORM_CERCA_RETEN'");
+            $datos['combo_alarma']=$this->cmb_alarma(null,"class='custom-select' id='FORM_ALARMA_COMUNITARIA'");
+            $datos['combo_frecuencia']=$this->cmb_frecuencia(null,"class='custom-select' id='FORM_FRECUENCIA_ROBOS'");
+            $datos['combo_lugarrobos']=$this->cmb_lugarrobos(null,"class='custom-select' id='FORM_LUGAR_ROBOS'");           
+            			
+			$datos['combo_usaredes']=$this->cmb_usaredes(null,"  class='custom-select' id='FORM_REDSOCIAL'");
+			$datos['combo_tiporedes']=$this->cmb_tiporedes(null,"  class='custom-select' id='FORM_TIPOREDSOCIAL'");
+       } else {
 			//Caso para la edición de un registro
 			$datos=null;
         }
