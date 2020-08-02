@@ -2,6 +2,7 @@
 class Mhoja extends CI_Model {
    
 	//funcion para crear un nuevo registro
+	//Cambio para demo de uso de github
     function addHoja(){			
 			$sqlfecha="select DATE_FORMAT(SYSDATE(),'%d/%m/%Y %H:%i:%s') FECHA from dual";
 			$FECHA=$this->db->query($sqlfecha)->row()->FECHA;
