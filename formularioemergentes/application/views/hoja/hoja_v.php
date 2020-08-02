@@ -58,16 +58,16 @@
 <div class="container-fluid">
   <form id="fhoja">
     <div id="cabecera" class="row mb-5">
-      <h4 class="h5 text-center col-md-12" style="color: #FF0000;">FORMULARIO DE ANÁLISIS EMERGENTES</h4>
+      <h3 class="h5 text-center col-md-12" style="color: #FF0000;">FORMULARIO DE ANÁLISIS EMERGENTE</h3>
       <h4 class="h5 text-center col-md-12">
         Campos Obligatorios (*)
         <br>
-        Favor verifique sus datos antes de llenar el formulario
+        Favor verifique sus datos antes de llenar el Formulario
       </h4>
     </div>
 
     <label class="accordion" id="btc"><label for="titulo" class="h5" style="color: #000000;">1.- Datos
-        generales</label></label>
+        Generales</label></label>
     <hr>
     <div class="form-row">
       <div class="form-group col-md-6">
@@ -95,7 +95,7 @@
       
 	  <div class="form-group col-md-6">
         <label for="inputNombres" class="h5">Nombres(*)</label>
-        <input type="text" maxlength="99" class="form-control" name="FORM_NOMBRES" id="FORM_NOMBRES"
+        <input type="text" maxlength="50" class="form-control" name="FORM_NOMBRES" id="FORM_NOMBRES"
           value="<?php echo !empty($sol->FORM_NOMBRES) ? prepCampoMostrar($sol->FORM_NOMBRES) : null ; ?>"
 		  placeholder="PRIMERO SEGUNDO NOMBRE"/>
       </div>
