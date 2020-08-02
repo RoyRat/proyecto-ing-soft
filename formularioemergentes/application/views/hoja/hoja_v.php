@@ -88,7 +88,7 @@
 
       <div class="form-group col-md-6">
         <label for="inputNombres" class="h5">Apellidos(*)</label>
-        <input type="text" maxlength="99" class="form-control" name="FORM_APELLIDOS" id="FORM_APELLIDOS"
+        <input type="text" maxlength="50" class="form-control" name="FORM_APELLIDOS" id="FORM_APELLIDOS"
           value="<?php echo !empty($sol->FORM_APELLIDOS) ? prepCampoMostrar($sol->FORM_APELLIDOS) : null ; ?>"
 		  placeholder="PRIMERO SEGUNDO APELLIDO"/>
       </div>
@@ -153,7 +153,7 @@
         <?php echo $combo_genero; ?>
       </div>	  
 	  <div class="form-group col-md-4">
-        <label for="inputModalidad" class="h5">Estado civil(*)</label>
+        <label for="inputModalidad" class="h5">Estado Civil(*)</label>
         <?php echo $combo_civil; ?>
       </div>
 	  <div class="form-group col-md-4">
