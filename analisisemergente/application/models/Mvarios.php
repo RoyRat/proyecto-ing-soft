@@ -385,15 +385,81 @@ function VerificarCorreo($direccion){
 	function getInternet(){
 		$out = null;
 		$sql = "SELECT DISTINCT FORM_POSEE_INTERNET,(CASE FORM_POSEE_INTERNET
-													WHEN 0 THEN 'NO'
-													WHEN 1 THEN 'SI'
-													END) FORM_POSEE_INTERNETDES
-													FROM FORMULARIO WHERE FORM_ESTADO=0";
+							WHEN 0 THEN 'NO'
+							WHEN 1 THEN 'SI'
+							END) FORM_POSEE_INTERNETDES
+							FROM FORMULARIO WHERE FORM_ESTADO=0";
         $results = $this->db->query($sql)->result();
 		foreach($results as $result){
 			$out .= option(null,$result->FORM_POSEE_INTERNETDES,utf8_encode($result->FORM_POSEE_INTERNETDES));
 		}
 		return select("cmbinternet[]","required",$out,"multiple='multiple'",-2);
+	}
+	
+	function getReten(){
+		$out = null;
+		$sql = "SELECT DISTINCT FORM_CERCA_RETEN,(CASE FORM_CERCA_RETEN
+							WHEN 0 THEN 'NO'
+							WHEN 1 THEN 'SI'
+							END) FORM_CERCA_RETENDES
+							FROM FORMULARIO WHERE FORM_ESTADO=0";
+        $results = $this->db->query($sql)->result();
+		foreach($results as $result){
+			$out .= option(null,$result->FORM_CERCA_RETENDES,utf8_encode($result->FORM_CERCA_RETENDES));
+		}
+		return select("cmbreten[]","required",$out,"multiple='multiple'",-2);
+	}
+	
+	function getAlarma(){
+		$out = null;
+		$sql = "SELECT DISTINCT FORM_ALARMA_COMUNITARIA,(CASE FORM_ALARMA_COMUNITARIA
+								WHEN 0 THEN 'NO'
+								WHEN 1 THEN 'SI'
+								END) FORM_ALARMA_COMUNITARIADES
+								FROM FORMULARIO WHERE FORM_ESTADO=0";
+        $results = $this->db->query($sql)->result();
+		foreach($results as $result){
+			$out .= option(null,$result->FORM_ALARMA_COMUNITARIADES,utf8_encode($result->FORM_ALARMA_COMUNITARIADES));
+		}
+		return select("cmbalarma[]","required",$out,"multiple='multiple'",-2);
+	}
+	
+	function getFrecuenciaRobo(){
+		$out = null;
+		$sql = "SELECT DISTINCT FORM_FRECUENCIA_ROBOS,(CASE FORM_FRECUENCIA_ROBOS
+								WHEN 1 THEN '06:00 A 09:00'
+								WHEN 2 THEN '12:00 A 14:00'
+								WHEN 3 THEN '17:00 A 21:00'
+								WHEN 4 THEN 'MADRUGADA'
+								WHEN 5 THEN 'HORARIOS NO LABORALES'
+								WHEN 6 THEN 'N/A'
+								END) FORM_FRECUENCIA_ROBOSDES
+							FROM FORMULARIO WHERE FORM_ESTADO=0";
+        $results = $this->db->query($sql)->result();
+		foreach($results as $result){
+			$out .= option(null,$result->FORM_FRECUENCIA_ROBOSDES,utf8_encode($result->FORM_FRECUENCIA_ROBOSDES));
+		}
+		return select("cmbfrecuenciarobo[]","required",$out,"multiple='multiple'",-2);
+	}
+	
+	function getLugarRobo(){
+		$out = null;
+		$sql = "SELECT DISTINCT FORM_LUGAR_ROBOS,(CASE FORM_LUGAR_ROBOS
+							WHEN 1 THEN 'PARADAS DE BUSES'
+							WHEN 2 THEN 'BUSES'
+							WHEN 3 THEN 'CALLEJONES'
+							WHEN 4 THEN 'CASAS'
+							WHEN 5 THEN 'CALLES PRINCIPALES'
+							WHEN 6 THEN 'CALLES TRANSVERSALES'
+							WHEN 7 THEN FORM_LUGAR_ROBODES
+							WHEN 8 THEN 'No Aplica'
+							END) FORM_LUGAR_ROBOSDES
+				FROM FORMULARIO WHERE FORM_ESTADO=0";
+        $results = $this->db->query($sql)->result();
+		foreach($results as $result){
+			$out .= option(null,$result->FORM_LUGAR_ROBOSDES,utf8_encode($result->FORM_LUGAR_ROBOSDES));
+		}
+		return select("cmblugarrobo[]","required",$out,"multiple='multiple'",-2);
 	}
 	
 }
