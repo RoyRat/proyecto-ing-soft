@@ -69,8 +69,8 @@ class Reporte extends CI_Controller{
 			$datos['usuario']=$this->session->userdata('US_USUARIO');
 			//Para consunlta interna
 			$fecha=$this->db->query("SELECT DATE_FORMAT(SYSDATE(),'%d-%m-%Y') FHASTA FROM DUAL")->row();
-            $datos['fechaInicio']=null;
-            $datos['fechaFin']=$fecha->FHASTA;
+            $datos['EC_FECHA_INGRESOINI']=null;
+            $datos['EC_FECHA_INGRESOFIN']=$fecha->FHASTA;
 		$datos['genero']= $this->mvarios->getGenero();
 		$datos['estadoCivil']= $this->mvarios->getEstadoCivil();
 		$datos['bono']= $this->mvarios->getbono();
@@ -91,8 +91,8 @@ class Reporte extends CI_Controller{
 			$datos['usuario']=$this->session->userdata('US_USUARIO');
 			//Para consunlta interna
 			$fecha=$this->db->query("SELECT DATE_FORMAT(SYSDATE(),'%d-%m-%Y') FHASTA FROM DUAL")->row();
-            $datos['fechaInicio']=null;
-            $datos['fechaFin']=$fecha->FHASTA;
+            $datos['SG_FECHA_INGRESOINI']=null;
+            $datos['SG_FECHA_INGRESOFIN']=$fecha->FHASTA;
 			$datos['genero']= $this->mvarios->getGenero();
 			$datos['estadoCivil']= $this->mvarios->getEstadoCivil();
 			$datos['reten']= $this->mvarios->getReten();
@@ -114,8 +114,8 @@ class Reporte extends CI_Controller{
 			$datos['usuario']=$this->session->userdata('US_USUARIO');
 			//Para consunlta interna
 			$fecha=$this->db->query("SELECT DATE_FORMAT(SYSDATE(),'%d-%m-%Y') FHASTA FROM DUAL")->row();
-            $datos['fechaInicio']=null;
-            $datos['fechaFin']=$fecha->FHASTA;
+            $datos['SC_FECHA_INGRESOINI']=null;
+            $datos['SC_FECHA_INGRESOFIN']=$fecha->FHASTA;
 			$datos['genero']= $this->mvarios->getGenero();
 			$datos['estadoCivil']= $this->mvarios->getEstadoCivil();
 			$datos['usaRedes']= $this->mvarios->getUsaRedes();
