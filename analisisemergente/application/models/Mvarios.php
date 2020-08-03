@@ -528,5 +528,19 @@ function VerificarCorreo($direccion){
 		}
 		return select("cmbvivienda[]","required",$out,"multiple='multiple'",-2);
 	}
+	
+	function getUsaRedes(){
+		$out = null;
+		$sql = "SELECT DISTINCT FORM_USA_REDES,(CASE FORM_USA_REDES
+												WHEN 0 THEN 'NO'
+												WHEN 1 THEN 'SI'
+												END) FORM_USA_REDESDES
+													FROM FORMULARIO WHERE FORM_ESTADO=0";
+        $results = $this->db->query($sql)->result();
+		foreach($results as $result){
+			$out .= option(null,$result->FORM_USA_REDESDES,utf8_encode($result->FORM_USA_REDESDES));
+		}
+		return select("cmbusaredes[]","required",$out,"multiple='multiple'",-2);
+	}
 
 }?>
