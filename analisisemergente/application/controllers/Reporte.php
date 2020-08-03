@@ -71,7 +71,12 @@ class Reporte extends CI_Controller{
 			$fecha=$this->db->query("SELECT DATE_FORMAT(SYSDATE(),'%d-%m-%Y') FHASTA FROM DUAL")->row();
             $datos['fechaInicio']=null;
             $datos['fechaFin']=$fecha->FHASTA;
-			
+		$datos['genero']= $this->mvarios->getGenero();
+		$datos['estadoCivil']= $this->mvarios->getEstadoCivil();
+		$datos['bono']= $this->mvarios->getbono();
+		$datos['labora']= $this->mvarios->getlabora();
+		$datos['ingresos']= $this->mvarios->getIngresos();
+		$datos['vivienda']= $this->mvarios->getVivienda();	
             $this->load->view("reporte/js/index_educacion_js",$datos);
             $this->load->view("reporte/index_educacion_v",$datos);
         }
