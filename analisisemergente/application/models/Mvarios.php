@@ -462,5 +462,71 @@ function VerificarCorreo($direccion){
 		return select("cmblugarrobo[]","required",$out,"multiple='multiple'",-2);
 	}
 	
-}
-?>
+	function getbono(){
+		$out = null;
+		$sql = "SELECT DISTINCT FORM_RECIBE_BONO,(CASE FORM_RECIBE_BONO
+																WHEN 0 THEN 'NO'
+																WHEN 1 THEN 'SI'
+																END) FORM_RECIBE_BONODES
+													FROM FORMULARIO WHERE FORM_ESTADO=0";
+        $results = $this->db->query($sql)->result();
+		foreach($results as $result){
+			$out .= option(null,$result->FORM_RECIBE_BONODES,utf8_encode($result->FORM_RECIBE_BONODES));
+		}
+		return select("cmbbono[]","required",$out,"multiple='multiple'",-2);
+	}
+	
+	function getlabora(){
+		$out = null;
+		$sql = "SELECT DISTINCT FORM_LABORA,(CASE FORM_LABORA
+														WHEN 0 THEN 'NO'
+														WHEN 1 THEN 'SI'
+														END) FORM_LABORADES
+													FROM FORMULARIO WHERE FORM_ESTADO=0";
+        $results = $this->db->query($sql)->result();
+		foreach($results as $result){
+			$out .= option(null,$result->FORM_LABORADES,utf8_encode($result->FORM_LABORADES));
+		}
+		return select("cmblabora[]","required",$out,"multiple='multiple'",-2);
+	}
+	
+	function getIngresos(){
+		$out = null;
+		$sql = "SELECT DISTINCT FORM_USA_INGRESOS,(CASE FORM_USA_INGRESOS
+													WHEN 1 THEN 'Financiar sus estudios'
+													WHEN 2 THEN 'Mantener su hogar'
+													WHEN 3 THEN 'Gastos personales no esenciales'
+													WHEN 4 THEN 'Financiar sus estudios y mantener su hogar'
+													WHEN 5 THEN FORM_INGRESOSDES
+													WHEN 6 THEN 'No aplica'
+													ELSE
+													'--'
+													END) FORM_USA_INGRESOSDES
+													FROM FORMULARIO WHERE FORM_ESTADO=0";
+        $results = $this->db->query($sql)->result();
+		foreach($results as $result){
+			$out .= option(null,$result->FORM_USA_INGRESOSDES,utf8_encode($result->FORM_USA_INGRESOSDES));
+		}
+		return select("cmbingresos[]","required",$out,"multiple='multiple'",-2);
+	}
+	
+	function getVivienda(){
+		$out = null;
+		$sql = "SELECT DISTINCT FORM_VIVIENDA,(CASE FORM_VIVIENDA
+												WHEN 1 THEN 'Propia'
+												WHEN 2 THEN 'Arrienda'
+												WHEN 3 THEN 'Antecresis'
+												WHEN 4 THEN 'De Familiares'
+												WHEN 5 THEN 'Cuida'
+												WHEN 6 THEN 'Compratida'
+												WHEN 7 THEN 'Otro'
+												END) FORM_VIVIENDADES
+													FROM FORMULARIO WHERE FORM_ESTADO=0";
+        $results = $this->db->query($sql)->result();
+		foreach($results as $result){
+			$out .= option(null,$result->FORM_VIVIENDADES,utf8_encode($result->FORM_VIVIENDADES));
+		}
+		return select("cmbvivienda[]","required",$out,"multiple='multiple'",-2);
+	}
+
+}?>
