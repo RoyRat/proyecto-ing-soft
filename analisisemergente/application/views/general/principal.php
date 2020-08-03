@@ -61,7 +61,7 @@
 							<li><a id="e_educacion" name="reporte/educacion" title="Reporte Educación" class="cabecera-links" href="#">Educación</a></li>
 							<li><a id="e_economia" name="reporte/economia" title="Reporte Economía" class="cabecera-links" href="#">Economía</a></li>
 							<li><a id="e_seguridad" name="reporte/seguridad" title="Reporte Seguridad" class="cabecera-links" href="#">Seguridad</a></li>
-							<li><a id="e_sector" name="reporte/sector" title="Reporte Sectores" class="cabecera-links" href="#">Sectores</a></li>
+							//<li><a id="e_sector" name="reporte/sector" title="Reporte Sectores" class="cabecera-links" href="#">Sectores</a></li>
 						</ul>
 					</li>
 				<li>
